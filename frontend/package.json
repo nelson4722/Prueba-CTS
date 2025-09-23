@@ -1,0 +1,17 @@
+{
+  "name": "concurso-san-valentin",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build"
+  },
+    "devDependencies": {
+    "vite": "^4.0.0",
+    "@vitejs/plugin-vue": "^4.0.0"
+  },
+  "dependencies": {
+    "vue": "^3.2.0",
+    "vue-router": "^4.1.0"
+  }
+
+}
