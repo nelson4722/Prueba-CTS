@@ -1,36 +1,36 @@
 # Proyecto Sorteo San Valentín CTS
 
-Aplicación **Full Stack** para gestionar un sorteo de San Valentín.  
-El premio es una **estadía de 2 noches todo pagado para una pareja en un hotel**.  
+Aplicación Full Stack para gestionar un sorteo de San Valentín.  
+El premio consiste en una estadía de 2 noches todo pagado para una pareja en un hotel.
 
 ---
 
-##  Descripción general
+## Descripción general
 
 El sistema permite:
 
-- Registro de usuarios con validación de correo.  
-- Creación de contraseña para activar la cuenta.  
-- Confirmación automática de participación en el sorteo.  
-- Gestión de concursantes por parte del administrador.  
-- Selección **aleatoria de un ganador**.  
-- Notificación automática por correo al ganador.  
+- Registro de usuarios con validación de correo.
+- Creación de contraseña para activar la cuenta.
+- Confirmación automática de participación en el sorteo.
+- Gestión de concursantes por parte del administrador.
+- Selección aleatoria de un ganador.
+- Notificación automática por correo al ganador.
 
 ---
 
 ## Tecnologías usadas
 
 ### Backend
-- Python 3.x  
-- Django  
-- Django REST Framework  
-- Celery + Redis (tareas asíncronas, envío de correos)  
+- Python 3.x
+- Django
+- Django REST Framework
+- Celery + Redis (tareas asíncronas, envío de correos)
 
 ### Frontend
-- Vue.js (con Vite)  
+- Vue.js (con Vite)
 
 ### Base de datos
-- SQLite (entorno de desarrollo)  
+- SQLite (entorno de desarrollo, opción de migrar a PostgreSQL o MySQL)
 
 ---
 
@@ -59,7 +59,7 @@ requirements.txt
 
 ---
 
-## Instrucciones de ejecución
+## Instrucciones de instalación y ejecución
 
 ### Frontend
 
@@ -73,10 +73,20 @@ Disponible en: [http://localhost:3000](http://localhost:3000)
 
 ### 🔹 Backend
 
+0. Crear entorno virtual:
+  ```bash
+   python3 -m venv env
+   ```
+
 1. Activar entorno virtual:  
    ```bash
    source env/bin/activate
    ```
+Puede instalar las dependencias de requirements.txt siempre y cuando se haya creado el entorno desde cero
+    ```bash
+    pip install -r requirements.txt
+   ```
+en caso contrario, saltarselo.
 
 2. Iniciar servidor Django:  
    ```bash
