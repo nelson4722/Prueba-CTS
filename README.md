@@ -128,22 +128,22 @@ Usuario.objects.filter(verificado=False).delete()
 
 ### Registro
 ```bash
-curl -X POST http://localhost:8000/api/registro/ -H "Content-Type: application/json" -d '{"username": "usuario1", "email": "usuario1@ejemplo.com", "telefono": "123456789"}'
+curl --location 'http://localhost:8000/api/registro/' --header 'Content-Type: application/json' --data-raw '{"username": "usuario1","email": "usuario1@ejemplo.com","telefono": "123456789","password":"random"}'
 ```
 
 ### Verificación de correo
 ```bash
-curl -X POST http://localhost:8000/api/verificar-correo/ -H "Content-Type: application/json" -d '{"id": "1"}'
+curl --location 'http://localhost:8000/api/verificar-correo/' --header 'Content-Type: application/json' --data '{"id": "13"}'
 ```
 
 ### Generar ganador (admin)
 ```bash
-curl -X POST http://localhost:8000/api/generar-ganador/ -H "Content-Type: application/json"
+curl --location --request POST 'http://localhost:8000/api/generar-ganador/' --header 'Content-Type: application/json'
 ```
 
 ### Login admin
 ```bash
-curl -X POST http://localhost:8000/api/login/ -H "Content-Type: application/json" -d '{"username": "admin", "password": "adminpass"}'
+curl --location 'http://localhost:8000/api/login/' --header 'Content-Type: application/json' --data '{"username": "admin", "password": "adminpass"}'
 ```
 
 ---
