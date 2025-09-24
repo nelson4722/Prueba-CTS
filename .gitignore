@@ -10,3 +10,4 @@ DS_Store
 /backend/.DS_Store
 /backend/env/.DS_Store
 /backend/env
+/backend/core/migrations/

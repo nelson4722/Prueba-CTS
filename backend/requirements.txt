@@ -2,3 +2,5 @@ Django>=4.2
 djangorestframework>=3.14
 celery>=5.3
 redis>=5.0
+django-cors-headers >=4.0
+django_celery_results>=2.5

@@ -71,33 +71,43 @@ npm run dev     # Iniciar servidor de desarrollo
 
 Disponible en: [http://localhost:3000](http://localhost:3000)  
 
-### 🔹 Backend
+### Backend
 
-0. Crear entorno virtual:
-  ```bash
-   python3 -m venv env
-   ```
+Para configurar el backend, solo debes ejecutar el script setup_backend.sh que se encuentra dentro del directorio backend. Este script se encargará de:
+
+Crear el entorno virtual (si no existe)
+Activarlo
+Actualizar pip
+Instalar las dependencias desde requirements.txt
+Ejecutar las migraciones necesarias
+
+Pasos para ejecutar el script de configuración
+En la terminal, navega a la carpeta backend:
 
 1. Activar entorno virtual:  
    ```bash
-   source env/bin/activate
+   cd backend
    ```
-Puede instalar las dependencias de requirements.txt siempre y cuando se haya creado el entorno desde cero
-    ```bash
-    pip install -r requirements.txt
-   ```
-en caso contrario, saltarselo.
 
-2. Iniciar servidor Django:  
+2. Dale permiso de ejecución al script (solo la primera vez):
    ```bash
+   chmod +x setup_backend.sh
+   ```
+
+3. Ejecuta el script:
+   ```bash
+   ./setup_backend.sh
+   ```
+
+#### Iniciar servidor y celery
+Luego de que el script haya terminado puedes iniciar el servidor Django y celery con:
+
+```bash
    python manage.py runserver 8000
-   ```
-
-3. Iniciar Celery (para envío de correos y tareas asíncronas):  
-   ```bash
-   celery -A prueba_cts worker --loglevel=info
-   ```
-
+```
+```bash
+celery -A prueba_cts worker --loglevel=info
+```
 ---
 
 ## Eliminación de usuarios en Django
