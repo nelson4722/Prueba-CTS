@@ -1,14 +1,15 @@
-from celery import shared_task
 from django.core.mail import send_mail
-from .models import Usuario
+from django.conf import settings
+from prueba_cts.celery import app
 
-@shared_task
-def send_verification_email_task(user_id):
-    user = Usuario.objects.get(id=user_id)
+
+@app.task
+def send_verification_email(user_id, email):
+    verification_link = f"http://localhost:3000/verificar?id={user_id}"
     send_mail(
-        'Verificación de correo',
-        f'Enlace: http://localhost:8080/verificar/{user.id}',
-        'no-reply@midominio.com',
-        [user.email],
+        'Verifica tu correo',
+        f'Para verificar tu cuenta haz click aquí: {verification_link}',
+        settings.DEFAULT_FROM_EMAIL,
+        [email],
+        fail_silently=False,
     )
-    return f'Correo de verificación enviado a {user.email}'
