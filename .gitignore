@@ -5,4 +5,8 @@
 /backend/prueba_cts/__pycache__/
 /backend/core/__pycache__/
 /backend/media/
-/backend/.env   
+/backend/.env
+DS_Store
+/backend/.DS_Store
+/backend/env/.DS_Store
+/backend/env
